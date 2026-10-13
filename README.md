@@ -1,8 +1,8 @@
 # F1 Next Race Countdown 🏎️⏱️
 
-Andrés Felipe Ceballos Martínez 
-Primer semestre de ingeniería de software
-Universidad Cooperativa De Colombia
+## Andrés Felipe Ceballos Martínez 
+## Primer semestre de ingeniería de software
+## Universidad Cooperativa De Colombia
 
 Una aplicación web ligera y dinámica que muestra un temporizador en tiempo real con el tiempo exacto restante para el próximo Gran Premio de Fórmula 1.
 
