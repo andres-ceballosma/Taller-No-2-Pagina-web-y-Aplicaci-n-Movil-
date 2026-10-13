@@ -17,13 +17,6 @@ Puedes ver la aplicación funcionando en tiempo real en el siguiente enlace:
 * **Temporizador Preciso:** Cuenta regresiva actualizada segundo a segundo (Días, Horas, Minutos y Segundos).
 * **Cero Dependencias:** Construido puramente con HTML, CSS y Vanilla JavaScript.
 
-## 🛠️ Tecnologías Utilizadas
-
-* **Frontend:** HTML5, CSS3 (Flexbox/Grid).
-* **Lógica:** JavaScript (ES6+, Promesas, Async/Await).
-* **Consumo de Datos:** [Fetch API](https://developer.mozilla.org/es/docs/Web/API/Fetch_API).
-* **Fuente de Datos:** [Jolpica F1 API](https://jolpi.ca/) (Reemplazo oficial de la API de Ergast).
-
 ## 🤖 Despliegue con Manus AI
 
 La versión en vivo de este proyecto fue desplegada de manera rápida y automatizada utilizando **Manus AI**.
