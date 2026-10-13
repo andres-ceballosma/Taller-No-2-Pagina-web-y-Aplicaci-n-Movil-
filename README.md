@@ -61,8 +61,4 @@ Se extrae el arreglo de carreras y se filtra la primera cuya combinación de `da
 
 Las contribuciones son bienvenidas. Si deseas mejorar el diseño, añadir la tabla de posiciones del campeonato o implementar la telemetría, siéntete libre de hacer un *Fork* del repositorio y enviar un *Pull Request*.
 
-## 📝 Licencia
-
-Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE](LICENSE) para más detalles.
-
 *Desarrollado con pasión por la Fórmula 1 y el código.* 🏎️💨
