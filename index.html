@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1a1b1f">
+<meta name="color-scheme" content="dark">
+<title>Cuenta regresiva F1 | Próxima carrera</title>
+<meta name="description" content="Temporizador de la próxima carrera de Fórmula 1, calendario, clasificaciones y resultados con datos de la API Jolpica.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏁%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<noscript><p style="padding:1rem;background:#e10600;color:#fff">Esta página necesita JavaScript para mostrar el calendario y los resultados.</p></noscript>
+
+<header class="top">
+  <a class="brand" href="#inicio">Parrilla<span>F1</span></a>
+  <nav aria-label="Secciones">
+    <a href="#calendario">Calendario</a>
+    <a href="#datos">Resultados</a>
+    <a href="#circuito">Circuito</a>
+  </nav>
+</header>
+
+<main>
+  <!-- Paso 1 de la guía: estructura HTML del temporizador -->
+  <section id="inicio" class="hero">
+    <div class="lights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <p class="hero-kicker">Siguiente carrera</p>
+    <div class="race-timer-card">
+      <h1><span id="race-name">Cargando…</span></h1>
+      <p id="race-place" class="place"></p>
+
+      <div class="countdown-timer" role="timer" aria-label="Tiempo restante para la carrera">
+        <div class="unit"><span id="cd-days">00</span><small>días</small></div>
+        <div class="unit"><span id="cd-hours">00</span><small>horas</small></div>
+        <div class="unit"><span id="cd-mins">00</span><small>minutos</small></div>
+        <div class="unit"><span id="cd-secs">00</span><small>segundos</small></div>
+      </div>
+      <p id="race-status" class="status" aria-live="polite"></p>
+    </div>
+
+    <div class="sessions-wrap">
+      <h2>Horario del fin de semana</h2>
+      <p class="note" id="tz-note"></p>
+      <ol id="sessions" class="sessions"></ol>
+    </div>
+  </section>
+
+  <section id="calendario" class="block">
+    <div class="block-head">
+      <h2>Calendario <span id="season-label"></span></h2>
+      <p>Elige cualquier carrera para ver sus resultados, clasificaciones y circuito. Las fechas están en tu zona horaria.</p>
+    </div>
+    <div id="calendar" class="calendar"></div>
+  </section>
+
+  <section id="datos" class="block alt">
+    <div class="block-head">
+      <h2>Resultados y clasificaciones</h2>
+      <p id="last-race-label">Datos de la última carrera disputada y del campeonato.</p>
+      <a class="jump" href="#circuito">Ver el circuito de esta carrera</a>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Tablas de datos">
+      <button role="tab" id="tab-results" aria-selected="true" aria-controls="panel" data-tab="results">Carrera</button>
+      <button role="tab" id="tab-qualy" aria-selected="false" aria-controls="panel" data-tab="qualy">Clasificación</button>
+      <button role="tab" id="tab-drivers" aria-selected="false" aria-controls="panel" data-tab="drivers">Pilotos</button>
+      <button role="tab" id="tab-teams" aria-selected="false" aria-controls="panel" data-tab="teams">Constructores</button>
+    </div>
+    <div id="panel" class="panel" role="tabpanel" aria-labelledby="tab-results"></div>
+
+    <div class="stats" id="stats">
+      <div class="stats-head">
+        <h3>Estadísticas del campeonato</h3>
+        <p class="note">Estos datos no son oficiales, son estimaciones</p>
+      </div>
+      <div id="stats-body" class="stats-grid"></div>
+    </div>
+  </section>
+
+  <section id="circuito" class="block">
+    <div class="block-head">
+      <h2>Circuito</h2>
+      <p id="circuit-sub">Elige una carrera en el calendario para ver su trazado.</p>
+    </div>
+    <div class="circuit">
+      <div id="circuit-map" class="circuit-map"></div>
+      <div class="circuit-info">
+        <h3 id="circuit-name"></h3>
+        <p id="circuit-place" class="place"></p>
+        <ul id="sector-legend" class="legend"></ul>
+        <p class="note" id="circuit-note"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Datos: <a href="https://api.jolpi.ca/ergast/f1/" target="_blank" rel="noopener">Jolpica F1 API</a>, licencia CC BY-NC-SA 4.0.</p>
+  <p>Trazados: <a href="https://github.com/bacinger/f1-circuits" target="_blank" rel="noopener">bacinger/f1-circuits</a> (licencia MIT, datos no oficiales).</p>
+  <p>Proyecto no oficial. «F1» y «Formula 1» son marcas de Formula One Licensing B.V.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
